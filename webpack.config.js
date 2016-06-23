@@ -1,8 +1,8 @@
-/* eslint "esnext": false */
-
-'use strict';
-
 module.exports = {
+  devServer: {
+    inline:true,
+    port: 8008
+  },
   entry: {
     javascript: './demo/index.jsx',
     html: './demo/index.html'
@@ -14,13 +14,12 @@ module.exports = {
   module: {
     loaders: [
       {
-        test: /\.jsx$/,
-        loader: 'jsx-loader'
-      },
-      {
         test: /\.js|jsx$/,
         exclude: /node_modules/,
-        loader: 'babel-loader'
+        loader: 'babel-loader',
+        query: {
+          presets: ['react', 'es2015']
+        }
       },
       {
         test: /\.html$/,

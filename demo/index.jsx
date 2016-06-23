@@ -1,46 +1,39 @@
+import React from 'react';
 import ReactDOM from 'react-dom';
 import ContactForm from './components/ContactForm';
 import StringField from './components/StringField';
 import CheckboxField from './components/CheckboxField';
+import SelectField from './components/SelectField';
 
-// If a package dependency: import ReactJsonSchema from 'react-json-schema';
-import ReactJsonSchema from '../dist/react-json-schema';
-
-const welcomeSchema = {
-  'component': 'h2',
-  'className': 'text-center',
-  'text': 'Hello World!'
-};
-
-const welcomeBanner = new ReactJsonSchema();
-ReactDOM.render(welcomeBanner.parseSchema(welcomeSchema), document.getElementById('welcome-banner'));
+import JsonSchema from '../dist/json-schema';
 
 const formSchema = {
   'component': 'ContactForm',
-  'title': 'Tell us a little about yourself, we\'d appreciate it',
+  'title': 'Author: Burak Tekin',
   'children': [
     {
       'component': 'StringField',
-      'label': 'What\'s your name',
-      'help': 'It\'s okay, don\'t be shy :)'
+      'label': '',
     },
     {
-      'component': 'CheckboxField',
-      'checkboxes': [
+      'component': 'SelectField',
+      'selections': [
         {
-          'label': 'I\'m already checked!',
-          'defaultChecked': true
+          'label': 'Query'
         },
         {
-          'label': 'Here\'s another'
+          'label': 'Operator'
+        },
+        {
+          'label': 'Value'
         }
       ]
-    }
+    },
   ]
 };
 
-const componentMap = { ContactForm, StringField, CheckboxField };
-const contactForm = new ReactJsonSchema();
+const componentMap = { ContactForm, StringField, CheckboxField, SelectField };
+const contactForm = new JsonSchema();
 contactForm.setComponentMap(componentMap);
 
 ReactDOM.render(contactForm.parseSchema(formSchema), document.getElementById('json-react-schema'));

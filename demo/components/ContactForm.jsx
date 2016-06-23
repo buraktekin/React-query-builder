@@ -8,7 +8,7 @@ class ContactForm extends React.Component {
   }
 
   alertSubmit() {
-    alert('Hey, you submitted the form!');
+    alert('Submitted');
   }
 
   render() {
@@ -16,10 +16,11 @@ class ContactForm extends React.Component {
       <Grid>
         <Row>
           <Col md={6} mdOffset={3} xs={12}>
-            <h3>{this.props.title}</h3>
+            <h5>{this.props.title}</h5>
+            <hr />
             <form>
               {this.props.children}
-              <Button type="submit" bsStyle="success" onClick={this.alertSubmit}>Submit Contact Information!</Button>
+              <Button type="submit" bsStyle="success" onClick={this.alertSubmit}>Submit</Button>
             </form>
           </Col>
         </Row>

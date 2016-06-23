@@ -1,45 +1,52 @@
 {
-  "name": "react-json-schema",
-  "version": "0.3.0",
-  "description": "Write component schema in JSON; parse to create react elements.",
+  "name": "json-query-builder",
+  "version": "0.0.1",
+  "description": "Parse JSON to create query builder interface by using react elements.",
   "keywords": [
     "react",
+    "components",
+    "query",
+    "builder",
     "JSON",
-    "schema",
-    "components"
+    "parse",
+    "schema"
   ],
-  "author": {
-    "name": "elliottisonfire",
-    "url": "http://elliottisonfire.com"
-  },
+  "author": "bt",
   "repository": {
     "type": "git",
-    "url": "https://github.com/TechniqueSoftware/react-json-schema"
+    "url": "git+https://github.com/buraktekin/React-query-builder.git"
   },
-  "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/TechniqueSoftware/react-json-schema/issues"
+    "url": "https://github.com/buraktekin/React-query-builder/issues"
   },
+  "homepage": "https://github.com/buraktekin/React-query-builder#readme",
+  "license": "MIT",
   "scripts": {
     "prebuild": "rm -rf dist && mkdir dist",
-    "build": "babel lib/ReactJsonSchema.js -o dist/react-json-schema.js",
-    "postbuild": "node_modules/uglify-js/bin/uglifyjs dist/react-json-schema.js -o dist/react-json-schema.min.js",
-    "demo": "webpack-dev-server --progress --colors --inline --config webpack.config.demo.js",
-    "test": "webpack --progress --profile --colors --config webpack.config.spec.js"
+    "build": "babel lib/JsonSchema.js -o dist/json-schema.js",
+    "postbuild": "node_modules/uglify-js/bin/uglifyjs dist/json-schema.js -o dist/json-schema.min.js",
+    "start": "webpack-dev-server --progress --colors --inline --config webpack.config.js"
   },
-  "main": "dist/react-json-schema.js",
+  "main": "dist/json-schema.js",
   "files": [
     "lib",
     "dist"
   ],
   "dependencies": {
     "lodash": "^3.10.1",
-    "react": "^0.14.2"
+    "react": "^15.1.0",
+    "react-redux": "^4.4.5",
+    "redux": "^3.5.2",
+    "redux-form": "^5.2.5"
   },
   "devDependencies": {
-    "babel-core": "^5.8.25",
+    "babel-cli": "^6.4.0",
+    "babel-core": "^6.4.0",
     "babel-eslint": "^4.1.3",
-    "babel-loader": "^5.3.2",
+    "babel-loader": "6.1.0",
+    "babel-preset-es2015": "6.1.18",
+    "babel-preset-react": "6.1.18",
+    "babel-preset-stage-2": "^6.5.0",
     "bootstrap": "^3.3.5",
     "eslint": "^1.5.1",
     "eslint-config-airbnb": "^0.1.0",
@@ -48,8 +55,8 @@
     "jasmine": "^2.3.2",
     "jsx-loader": "^0.13.2",
     "path": "^0.12.7",
-    "react-bootstrap": "^0.27.3",
-    "react-dom": "^0.14.2",
+    "react-bootstrap": "^0.29.5",
+    "react-dom": "^15.1.0",
     "uglify-js": "^2.4.24",
     "webpack": "^1.12.2",
     "webpack-dev-server": "^1.12.0"

@@ -9,9 +9,9 @@ class CheckboxField extends React.Component {
 
   renderCheckboxes() {
     const checkboxes = [];
-    this.props.checkboxes.forEach(function loop(checkbox, index) {
+    this.props.checkboxes.map(function loop(checkbox, index) {
       checkboxes.push(
-        <Input key={index} type="checkbox" label={checkbox.label} {...checkbox} />
+        <Input key={index} type="checkbox" label={checkbox.name} {...checkbox} />
       );
     });
     return checkboxes;
@@ -30,7 +30,7 @@ class CheckboxField extends React.Component {
 CheckboxField.propTypes = {
   checkboxes: React.PropTypes.arrayOf(
     React.PropTypes.shape({
-      label: React.PropTypes.string.isRequired
+      name: React.PropTypes.string.isRequired
     }).isRequired
   ).isRequired
 };
